@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <!-- Placeholder façade until the real photo of "Haus der Baustoffe" arrives -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6b9fd4"/><stop offset="1" stop-color="#cfe0f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect y="780" width="1600" height="120" fill="#9a958c"/>
+  <rect x="40" y="250" width="1520" height="540" fill="#d9d3c7"/>
+  <rect x="40" y="250" width="1520" height="40" fill="#8a8378"/>
+  <rect x="460" y="300" width="680" height="70" fill="#2e2b27"/>
+  <text x="800" y="348" text-anchor="middle" font-family="Georgia, serif" font-size="40" letter-spacing="10" fill="#f2efe8">HAUS DER BAUSTOFFE</text>
+  <g fill="#3d4a57" stroke="#6f6a61" stroke-width="10">
+    <rect x="103" y="450" width="180" height="170"/>
+    <rect x="346" y="450" width="180" height="170"/>
+    <rect x="589" y="450" width="180" height="170"/>
+    <rect x="832" y="450" width="180" height="170"/>
+    <rect x="1075" y="450" width="180" height="170"/>
+    <rect x="1318" y="450" width="180" height="170"/>
+  </g>
+  <rect x="740" y="640" width="120" height="140" fill="#4a4036"/>
+  <text x="800" y="870" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#f7f5f0" opacity="0.85">Platzhalter – Foto folgt</text>
+</svg>

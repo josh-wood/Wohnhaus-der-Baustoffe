@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #1f1d1a;
+  --color-paper: #fff;
+  --color-accent: #c8102e;
+  --font-serif:  "Times New Roman", serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-size: 60%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+   font-family: "Times New Roman", Times, serif;
+}
+
+/* ---------- Window hotspots (spec 02) ---------- */
+.hotspot {
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.hotspot-hit {
+  fill: transparent;
+}
+.hotspot-shape {
+  fill: rgb(255 255 255 / 0.08);
+  stroke: rgb(255 255 255 / 0.2);
+  stroke-width: 4;
+  vector-effect: non-scaling-stroke;
+  transition: fill 150ms ease, stroke 150ms ease;
+  animation: hotspot-pulse 2.8s ease-in-out infinite;
+}
+.hotspot-badge circle {
+  fill: rgb(255 255 255 / 0.2);
+}
+.hotspot-badge text {
+  fill: var(--color-ink);
+  font-family: Georgia, serif;
+}
+.hotspot:hover .hotspot-shape,
+.hotspot:active .hotspot-shape,
+.hotspot:focus-visible .hotspot-shape {
+  fill: rgb(200 16 46 / 0.);
+  stroke: #fff;
+  stroke-width: 3;
+  animation: none;
+}
+.hotspot:focus-visible .hotspot-hit {
+  stroke: var(--color-accent);
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+}
+@keyframes hotspot-pulse {
+  0%, 100% { stroke-opacity: 0.45; }
+  50%      { stroke-opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hotspot-shape { animation: none; }
+}
+/* Debug mode: show everything clearly */
+.hotspots-debug .hotspot-hit {
+  fill: rgb(255 230 0 / 0.25);
+  stroke: #ffd600;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+.hotspots-debug .hotspot-shape {
+  fill: rgb(200 16 46 / 0.35);
+  animation: none;
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  display: inline-flex;
+  min-height: 48px;
+  min-width: 12rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  padding: 0.75rem 2rem;
+  font-size: 1.125rem;
+  letter-spacing: 0.02em;
+  transition: opacity 150ms ease;
+}
+.btn-primary:hover { opacity: 0.85; }
+.btn-primary:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+.btn-primary.is-disabled { opacity: 0.3; cursor: not-allowed; }
+
+/* ---------- Calendar (spec 03) ---------- */
+.calendar-wrap .rdp-root {
+  --rdp-accent-color: var(--color-ink);
+  --rdp-accent-background-color: #e9e4da;
+  /* 7 columns must fit the narrowest phones: (viewport − page padding) / 7, max 44px */
+  --rdp-day-width: min(44px, calc((100vw - 2rem) / 7));
+  --rdp-day-height: min(44px, calc((100vw - 2rem) / 7));
+  --rdp-day_button-width: min(42px, calc((100vw - 2rem) / 7 - 2px));
+  --rdp-day_button-height: min(42px, calc((100vw - 2rem) / 7 - 2px));
+  --rdp-today-color: var(--color-accent);
+  font-family: Georgia, serif;
+}
+.calendar-wrap .rdp-caption_label { font-size: 1.15rem; }
+.calendar-wrap .day-booked,
+.legend-booked {
+  background: repeating-linear-gradient(-45deg, #e3ddd2 0 4px, #f3efe7 4px 8px);
+}
+.calendar-wrap .day-booked .rdp-day_button {
+  text-decoration: line-through;
+  color: #9b948a;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--color-ink);
+  padding: 0.5rem 1.25rem;
+  transition: background 150ms ease;
+}
+.btn-secondary:hover { background: rgb(31 29 26 / 0.06); }
+.btn-secondary:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+
+/* ---------- Legal pages (spec 08) ---------- */
+.legal h2 { font-size: 1.2rem; margin-bottom: 0.35rem; }
+.legal p { line-height: 1.6; hyphens: auto; }
